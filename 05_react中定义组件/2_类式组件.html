@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2_类式组件</title>
+</head>
+<body>
+    <div id="test"></div>
+    
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        class MyComponent extends React.Component {
+            //render是放在哪里的？ —— MyComponent的原型对象上，供实例使用。
+            //render中的this是谁？ —— MyComponent的实例对象。MyComponent组件实例对象。
+            render(){
+                console.log('render中的this：',this);
+                return <h2>我是用函数定义的组件（适用于【复杂组件】的定义）</h2>
+            }
+        }
+        
+      ReactDOM.render(<MyComponent/>,document.getElementById('test'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3_虚拟DOM与真实DOM</title>
+</head>
+<body>
+    <div id="test"></div>
+    <div id="demo"></div>
+
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        const VDOM = (
+            <h1 id="title">
+            <span>Hello, React</span>
+            </h1>)
+        ReactDOM.render(VDOM,document.getElementById('test'))
+        
+        const TDOM = document.getElementById('demo')
+
+        console.log('虚拟DOM', VDOM);
+        console.log('真实DOM', TDOM);
+
+        debugger;
+        //查看数据类型
+        //console.log(typeof VDOM); 
+        //判断是不是object类型实例
+        //console.log(VDOM instanceof Object); 
+    </script>
+
+    
+</body>
+</html>
